@@ -4,11 +4,12 @@ from .models import Post
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
+from django.http import HttpResponse
 
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by(
-        "published_date"
+        "-published_date"
     )
     return render(request, "blog/post_list.html", {"posts": posts})
 
@@ -20,7 +21,7 @@ def post_detail(request, pk):
 
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -30,6 +31,12 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, "blog/post_edit.html", {"form": form})
+
+
+def display_images(request):
+    if request.method == "GET":
+        Images = Post.objects.all()
+        return render((request, "display_images.html", {"Blog_images": Post}))
 
 
 def post_edit(request, pk):
