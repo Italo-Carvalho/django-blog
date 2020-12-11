@@ -1,8 +1,8 @@
 ## Blog feito em  Python
 
-# LIVE DEMO: http://italocc11.pythonanywhere.com/
+_LIVE DEMO: http://italocc11.pythonanywhere.com/_
 
-## Tela de Postagens 📧
+### Tela de Postagens 📧
 
 ![posts](/.github/post-list.jpg)
 
