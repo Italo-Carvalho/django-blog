@@ -2,6 +2,13 @@
 
 _LIVE DEMO: http://italocc11.pythonanywhere.com/_
 
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- [Django](https://www.djangoproject.com/)
+- [SQLite](https://www.sqlite.org/index.html)
+
 ### Tela de Postagens 📧
 
 ![posts](/.github/post-list.jpg)
@@ -14,9 +21,3 @@ _LIVE DEMO: http://italocc11.pythonanywhere.com/_
 
 ![post edit](/.github/post-edit.jpg)
 
-## 🚀 Tecnologias
-
-Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
-
-- [Django](https://www.djangoproject.com/)
-- [SQLite](https://www.sqlite.org/index.html)
