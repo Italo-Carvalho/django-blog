@@ -2,6 +2,13 @@
 
 _LIVE DEMO: http://italocc11.pythonanywhere.com/_
 
+## Como iniciar localmente
+- Instalar dependências `pip install -r requirements.txt`
+- Criar ambiente virtual `python -m venv myvenv`
+- Analisar mudanças nos modelos `python manage.py makemigrations`
+- Alterar estrutura do Banco de dado `python manage.py migrate`
+- Criar seu Admin `python manage.py createsuperuser`
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
