@@ -1,4 +1,4 @@
 {
-  "python.pythonPath": "C:\\Users\\Ítalo\\envs\\blog-django\\Scripts\\python.exe",
+  "python.pythonPath": "C:\\Users\\Ítalo\\envs\\django-blog-master\\Scripts\\python.exe",
   "python.formatting.provider": "black"
 }

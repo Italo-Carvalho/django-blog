@@ -4,28 +4,37 @@
 <head>
   <title>Italo Blog</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="shortcut icon" type="image/png" href="{% static 'icon.ico' %}" />
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="page-header">
+<div class="page-header">
+
     {% if user.is_authenticated %}
-    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="menu-ico glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'post_draft_list' %}" class="menu-ico top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+        <p class="top-menu" style="
+    margin-top: 19px;">👤 {{ user.username }} <small>[<a class="exit" href="{% url 'logout' %}" >x</a>]</small></p>
+    {% else %}
+        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
     {% endif %}
     <h1><a href="/">Italo Blog</a></h1>
-  </div>
-  <div class="content container">
-    <div class="row">
-      <div class="col-md-8">
-        {% block content %}
-        {% endblock %}
-      </div>
+    
+</div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
     </div>
-  </div>
 </body>
 
 </html>
