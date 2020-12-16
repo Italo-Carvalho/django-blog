@@ -1,9 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <h1>New comment</h1>
     <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Send</button>
+        <input type="text" name="author" maxlength="28" required="" id="id_author"style="width: 250px;" placeholder="Nome">
+        <button type="submit" id="coment-submit">Enviar</button>
+        <div>
+        <textarea name="text" cols="40" rows="10" required="" id="id_text" style="width: 350px;" placeholder="Comentário"></textarea>
+        </div>
+        
+        
     </form>
 {% endblock %}
