@@ -2,10 +2,12 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-<a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-<a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
-{% endif %}
+    <div style="margin: 20 20;float: right;">
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
+        {% endif %}
+    </div>
 <div class="post">
 {% if post.published_date %}
     <div class="date">
@@ -15,12 +17,15 @@
   {% endif %}
   <h2 style=" font-family: 'Black Han Sans';">{{ post.title }}</h2><span></span>
   <p>{{post.text | linebreaksbr}}</p>
-    <img src="{{ post.image.url }}" class="img-responsive" style=""/>
+
+    {% if post.image %}
+        <img src="{{ post.image.url }}"  class="img-responsive" style="max-width:550px; max-height: 550px;"/>
+    {% endif %}
 
 
 </div>
-<a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
-<hr>
+<a class="btn btn-primary" style="margin-bottom:15px" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comentário</a>
+<div class="comment-case">
 {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment-detail">
@@ -35,7 +40,9 @@
          {{ comment.created_date }}
     </div>
     {% endif %}
+
 {% empty %}
-    <p>No comments here yet :(</p>
+    <p style="color:white; padding:10 0 0 0;">Seja o primeiro a comenta :)</p>
 {% endfor %}
+</div>
 {% endblock %}

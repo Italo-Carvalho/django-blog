@@ -11,8 +11,8 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     image = models.ImageField(
         upload_to="images",
-        default="none.png",
         blank=True,
+        null=True,
     )
 
     def publish(self):

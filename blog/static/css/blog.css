@@ -132,3 +132,14 @@ input {
   height: 42;
   width: 95;
 }
+
+.comment-case {
+  border: 2px solid #626365;
+  border-radius: 15px;
+  padding: 10 10 10 10;
+}
+
+.p-red {
+  color: red;
+  font-weight: bold;
+}
