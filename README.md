@@ -25,7 +25,7 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ![detalhes do post](/.github/post-details.jpg)
 #Comentários
 
-![comentarios](/.gitgub/comment.jpg)
+![comentarios](/.github/comment.jpg)
 ### Tela de cadastro dos Posts 📡
 
 ![post edit](/.github/post-edit.jpg)
