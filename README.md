@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ### Tela de Detalhes do Post 📓
 
 ![detalhes do post](/.github/post-details.jpg)
-# Comentários
+### Comentários
 
 ![comentarios](/.github/comment.jpg)
 ### Tela de cadastro dos Posts 📡
